@@ -8,6 +8,8 @@ protected abstract class Person {
     Email email;
     PhoneNum phoneNum;
 
+    
+
     abstract boolean isValid();
 
     @Override

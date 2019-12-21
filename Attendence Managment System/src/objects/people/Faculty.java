@@ -2,12 +2,12 @@ package objects.people;
 
 import objects.varTypes.*;
 
-public class Teacher extends Person {
-    Department department;
+public class Faculty extends Person{
+    Department occupation;
 
     @Override
     public String toString() {
-        String str = this.department.toString() + " Teacher\n";
+        String str = this.department.toString() + " Faculty\n";
         return str + super.toString();
     }
 }
