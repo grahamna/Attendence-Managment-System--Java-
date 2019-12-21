@@ -1,14 +1,15 @@
 package objects.varTypes;
 
 public class Department {
-    private int departmentID;
+    private ID departmentID;
     private String departementName;
+    private Building building;
 
-    public int getDepartmentID() {
+    public ID getDepartmentID() {
         return departmentID;
     }
 
-    public void setDepartmentID(int departmentID) {
+    public void setDepartmentID(ID departmentID) {
         this.departmentID = departmentID;
     }
 
@@ -20,9 +21,18 @@ public class Department {
         this.departementName = departementName;
     }
 
+    public Building getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
+    } 
+
     @Override
     public String toString() {
         return this.departementName;
     }
+
 
 }
