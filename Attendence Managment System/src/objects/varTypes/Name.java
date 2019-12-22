@@ -6,6 +6,18 @@ public class Name {
     private String lName;
     private boolean hasMiddleInit = false;
 
+
+    public Name(final String fName, final char mInitial, final String lName) {
+        setHasMiddleInit(true);
+        setfName(fName);
+        setlName(lName);
+    }
+
+    public Name(final String fName, final String lName) {
+        setfName(fName);
+        setlName(lName);
+    }
+
     public String getfName() {
         return fName;
     }

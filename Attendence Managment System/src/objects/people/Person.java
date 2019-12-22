@@ -12,8 +12,7 @@ protected abstract class Person {
     private Department department;
     private String type;
     
-    protected Person(final Name name, final ID id, final Email email, final PhoneNum phoneNum,
-            final Department department, final String type) {
+    protected Person(final Name name, final ID id, final Email email, final PhoneNum phoneNum, final Department department, final String type) {
         setName(name);
         setId(id);
         setEmail(email);
@@ -31,6 +30,7 @@ protected abstract class Person {
         str += this.ID.toString() + '\n';
         str += "Email : " + this.email.toString() + '\n';
         str += "Phone Number : " + this.phoneNum.toString();
+        return str;
     }
 
     /**

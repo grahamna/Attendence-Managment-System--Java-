@@ -2,7 +2,7 @@ package objects.varTypes.Building;
 
 import java.util.List;
 
-public class Building implements Iterable<Floor>{
+public class Building {
     private int numOfFloors;
     private String buildingName;
     private List<Floor> floors;

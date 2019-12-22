@@ -1,6 +1,6 @@
 package objects.varTypes.Building;
 
-public class Room {
+public class Room implements Iterable<Room>{
     private Building building;
     private Floor floor;
     private int roomNum;
@@ -9,6 +9,11 @@ public class Room {
         setBuilding(building);
         setFloorNum(floor);
         setRoomNum(roomNum);
+    }
+
+    @Override
+    public String toString() {
+        return this.building.toString() + " - " + floor.getFloorNum() + this.roomNum;
     }
 
     public Building getBuilding() {
@@ -33,10 +38,5 @@ public class Room {
 
     public void setRoomNum(final int roomNum) {
         this.roomNum = roomNum;
-    }
-
-    @Override
-    public String toString() {
-        return this.building.toString() + " : " + this.roomNum;
     }
 }

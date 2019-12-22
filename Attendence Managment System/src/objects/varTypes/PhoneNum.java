@@ -3,6 +3,10 @@ package objects.varTypes;
 public class PhoneNum {
     private String phoneNum;
 
+    public PhoneNum(String phoneNum) {
+        setPhoneNum(phoneNum);
+    }
+
     public String getPhoneNum() {
         return phoneNum;
     }

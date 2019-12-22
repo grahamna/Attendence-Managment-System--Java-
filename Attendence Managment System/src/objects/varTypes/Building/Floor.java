@@ -2,7 +2,7 @@ package objects.varTypes.Building;
 
 import java.util.List;
 
-public class Floor implements Iterable <Room> {
+public class Floor implements Iterable <Floor> {
     private Building building;
     private List <Room> rooms;
     private int floorNum;
@@ -13,6 +13,10 @@ public class Floor implements Iterable <Room> {
         setFloorNum(floorNum);
     }
     
+    @Override
+    public String toString() {
+        return "Floor "+this.floorNum+" of "+this.building.toString();
+    }
 
     /**
      * @return Building return the building

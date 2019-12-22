@@ -4,6 +4,11 @@ public class ID {
     private String type;
     private int ID;
 
+    public ID(final String type, final int iD) {
+        setID(iD);
+        setType(type);
+    }
+
     public String getType() {
         return type;
     }
