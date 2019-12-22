@@ -7,7 +7,7 @@ public class PhoneNum {
         return phoneNum;
     }
 
-    public void setPhoneNum(String phoneNum) {
+    public void setPhoneNum(final String phoneNum) {
         this.phoneNum = phoneNum;
     }
 

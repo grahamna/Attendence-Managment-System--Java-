@@ -10,7 +10,7 @@ public class Name {
         return fName;
     }
 
-    public void setfName(String fName) {
+    public void setfName(final String fName) {
         this.fName = fName;
     }
 
@@ -18,7 +18,7 @@ public class Name {
         return mInitial;
     }
 
-    public void setmInitial(char mInitial) {
+    public void setmInitial(final char mInitial) {
         this.mInitial = mInitial;
     }
 
@@ -26,7 +26,7 @@ public class Name {
         return lName;
     }
 
-    public void setlName(String lName) {
+    public void setlName(final String lName) {
         this.lName = lName;
     }
 
@@ -34,7 +34,7 @@ public class Name {
         return hasMiddleInit;
     }
 
-    public void setHasMiddleInit(boolean hasMiddleInit) {
+    public void setHasMiddleInit(final boolean hasMiddleInit) {
         this.hasMiddleInit = hasMiddleInit;
     }
 

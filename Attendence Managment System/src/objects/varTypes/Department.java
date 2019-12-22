@@ -1,15 +1,21 @@
 package objects.varTypes;
 
-public class Department {
+import java.util.List;
+
+import objects.people.Teacher;
+
+public class Department implements Iterable<Teacher>{
     private ID departmentID;
     private String departementName;
     private Building building;
+    private List<Teacher> departmentTeachers;
+    private List<Student> departmentStudents;
 
     public ID getDepartmentID() {
         return departmentID;
     }
 
-    public void setDepartmentID(ID departmentID) {
+    public void setDepartmentID(final ID departmentID) {
         this.departmentID = departmentID;
     }
 
@@ -17,7 +23,7 @@ public class Department {
         return departementName;
     }
 
-    public void setDepartementName(String departementName) {
+    public void setDepartementName(final String departementName) {
         this.departementName = departementName;
     }
 
@@ -25,7 +31,7 @@ public class Department {
         return building;
     }
 
-    public void setBuilding(Building building) {
+    public void setBuilding(final Building building) {
         this.building = building;
     } 
 

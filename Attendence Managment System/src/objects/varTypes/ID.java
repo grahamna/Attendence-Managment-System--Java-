@@ -8,7 +8,7 @@ public class ID {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(final String type) {
         this.type = type;
     }
 
@@ -16,7 +16,7 @@ public class ID {
         return ID;
     }
 
-    public void setID(int iD) {
+    public void setID(final int iD) {
         ID = iD;
     }
 

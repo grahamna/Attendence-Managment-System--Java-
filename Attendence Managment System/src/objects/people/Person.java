@@ -12,7 +12,8 @@ protected abstract class Person {
     private Department department;
     private String type;
     
-    protected Person(Name name, ID id, Email email, PhoneNum phoneNum, Department department, String type){
+    protected Person(final Name name, final ID id, final Email email, final PhoneNum phoneNum,
+            final Department department, final String type) {
         setName(name);
         setId(id);
         setEmail(email);
@@ -25,13 +26,12 @@ protected abstract class Person {
 
     @Override
     public String toString() {
-        String str = this.department.toString() + this.type.toString() +'\n';
-        str+= "Name : " +this.name.toString()+'\n';
-        str+= this.ID.toString()+'\n';
-        str+= "Email : " + this.email.toString()+'\n';
-        str+= "Phone Number : "+ this.phoneNum.toString();
+        String str = this.department.toString() + this.type.toString() + '\n';
+        str += "Name : " + this.name.toString() + '\n';
+        str += this.ID.toString() + '\n';
+        str += "Email : " + this.email.toString() + '\n';
+        str += "Phone Number : " + this.phoneNum.toString();
     }
-    
 
     /**
      * @return Name return the name
@@ -43,7 +43,7 @@ protected abstract class Person {
     /**
      * @param name the name to set
      */
-    public void setName(Name name) {
+    public void setName(final Name name) {
         this.name = name;
     }
 
@@ -57,7 +57,7 @@ protected abstract class Person {
     /**
      * @param id the id to set
      */
-    public void setId(ID id) {
+    public void setId(final ID id) {
         this.id = id;
     }
 
@@ -71,7 +71,7 @@ protected abstract class Person {
     /**
      * @param email the email to set
      */
-    public void setEmail(Email email) {
+    public void setEmail(final Email email) {
         this.email = email;
     }
 
@@ -85,7 +85,7 @@ protected abstract class Person {
     /**
      * @param phoneNum the phoneNum to set
      */
-    public void setPhoneNum(PhoneNum phoneNum) {
+    public void setPhoneNum(final PhoneNum phoneNum) {
         this.phoneNum = phoneNum;
     }
 
@@ -99,7 +99,7 @@ protected abstract class Person {
     /**
      * @param department the department to set
      */
-    public void setDepartment(Department department) {
+    public void setDepartment(final Department department) {
         this.department = department;
     }
 
@@ -113,7 +113,7 @@ protected abstract class Person {
     /**
      * @param type the type to set
      */
-    public void setType(String type) {
+    public void setType(final String type) {
         this.type = type;
     }
 
