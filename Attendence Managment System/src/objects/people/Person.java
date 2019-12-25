@@ -1,6 +1,6 @@
 package objects.people;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import objects.varTypes.*;
 
@@ -11,8 +11,10 @@ protected abstract class Person {
     private PhoneNum phoneNum;
     private Department department;
     private String type;
-    
-    protected Person(final Name name, final ID id, final Email email, final PhoneNum phoneNum, final Department department, final String type) {
+    private final ArrayList<Course> hasCourses = new ArrayList<Course>();
+
+    protected Person(final Name name, final ID id, final Email email, final PhoneNum phoneNum,
+            final Department department, final String type) {
         setName(name);
         setId(id);
         setEmail(email);
@@ -21,8 +23,6 @@ protected abstract class Person {
         setType(type);
     }
 
-    abstract boolean isValid();
-
     @Override
     public String toString() {
         String str = this.department.toString() + this.type.toString() + '\n';
@@ -30,6 +30,14 @@ protected abstract class Person {
         str += this.ID.toString() + '\n';
         str += "Email : " + this.email.toString() + '\n';
         str += "Phone Number : " + this.phoneNum.toString();
+        return str;
+    }
+
+    public String printMyCourses() {
+        String str = "";
+        for (final Course course : takesCourses) {
+            str += course.toString() + '\n';
+        }
         return str;
     }
 
@@ -117,4 +125,13 @@ protected abstract class Person {
         this.type = type;
     }
 
+    public ArrayList<Course> getHasCourses() {
+        return hasCourses;
+    }
+    public void addHasCourses(final Course s) {
+        this.hasCourses.add(s);
+    }
+    public void removeHasCourses(final Course s) {
+        this.hasCourses.remove(s);
+    }
 }

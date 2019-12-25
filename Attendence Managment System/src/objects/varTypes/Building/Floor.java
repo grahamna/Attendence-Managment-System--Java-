@@ -6,16 +6,18 @@ public class Floor implements Iterable <Floor> {
     private Building building;
     private List <Room> rooms;
     private int floorNum;
+    private int roomNum;
 
-    public Floor(final Building building, final List<Room> rooms, final int floorNum) {
+    public Floor(final Building building, final List<Room> rooms, final int floorNum, final int roomNum) {
         setBuilding(building);
         setRooms(rooms);
         setFloorNum(floorNum);
+        setRoomNum(roomNum);
     }
-    
+
     @Override
     public String toString() {
-        return "Floor "+this.floorNum+" of "+this.building.toString();
+        return "Floor " + this.floorNum + " of " + this.building.toString();
     }
 
     /**
@@ -58,6 +60,20 @@ public class Floor implements Iterable <Floor> {
      */
     public void setFloorNum(final int floorNum) {
         this.floorNum = floorNum;
+    }
+
+    /**
+     * @return int return the roomNum
+     */
+    public int getRoomNum() {
+        return roomNum;
+    }
+
+    /**
+     * @param roomNum the roomNum to set
+     */
+    public void setRoomNum(final int roomNum) {
+        this.roomNum = roomNum;
     }
 
 }

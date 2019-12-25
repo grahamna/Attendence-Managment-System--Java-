@@ -2,9 +2,9 @@ package objects.varTypes;
 
 public class ID {
     private String type;
-    private int ID;
+    private String ID;
 
-    public ID(final String type, final int iD) {
+    public ID(final String type, final String iD) {
         setID(iD);
         setType(type);
     }
@@ -17,11 +17,11 @@ public class ID {
         this.type = type;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(final int iD) {
+    public void setID(final String iD) {
         ID = iD;
     }
 

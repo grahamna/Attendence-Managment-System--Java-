@@ -19,6 +19,15 @@ public class Building {
         return buildingName.toString();
     }
 
+    public String describe() {
+        String str = "( " + this.buildingName + " { " + this.numOfFloors + " } < ";
+        for (final Floor floor : floors) {
+            str += floor.getFloorNum() + " ";
+        }
+        str += "> ) ";
+        return str;
+    }
+
 
     /**
      * @return int return the numOfFloors

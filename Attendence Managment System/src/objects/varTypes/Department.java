@@ -27,6 +27,19 @@ public class Department implements Iterable<Department>{
         return this.departementName;
     }
 
+    public String describe() {
+        String str = this.departementName + " | " + this.departmentID + " | " + this.building + '\n';
+        str += "--Teachers--\n";
+        for (Teacher teacher : departmentTeachers) {
+            str += teacher.toString()+'\n';
+        }
+        str += "--Students--\n";
+        for (Student student : departmentStudents) {
+            str += student.toString()+'\n';
+        }
+        return str;
+    }
+
 
 
     /**

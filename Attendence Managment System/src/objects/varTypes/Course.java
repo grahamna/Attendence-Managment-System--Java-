@@ -30,6 +30,11 @@ public class Course implements Iterable<Course> {
         return this.courseID + " | " + this.courseNum + " | " + this.courseName;
     }
 
+    public String describe() {
+        return this.toString() + '\n' + this.room.toString() + '\n'; 
+        //may be incomplete
+    }
+
     public Room getRoom() {
         return room;
     }
@@ -53,18 +58,18 @@ public class Course implements Iterable<Course> {
     }
 
     /**
-     * @return List<Student> return the studentList
+     * @return ArrayList<Student> return the studentList
      */
-    public List<Student> getStudentList() {
+    public ArrayList<Student> getStudentList() {
         return studentList;
     }
-        public void addStudent(final Student s) {
-            this.studentList.add(s);
-        }
+    public void addStudent(final Student s) {
+        this.studentList.add(s);
+    }
 
-        public void removeStudent(final Student s) {
+    public void removeStudent(final Student s) {
             this.studentList.remove(s);
-        }
+    }
 
     /**
      * @return Department return the dep
