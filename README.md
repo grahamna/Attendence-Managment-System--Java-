@@ -1,55 +1,38 @@
 # Attendence Managment System (Java)
 
 OUTLINE/Planning
-
-Objects within system//
-
-Brainstorm outline
-Name
-ID
-    type?
-    student
-    faculty?
-email
-phone num
-
-Teachers (inherit from person?)
-    Name
-    ID num
-    List of classes they teach
-    list of classes they previously tought?
-    email
-    phone num
-    department
-    Office room
+-------------------------------------------------------------------
+Currently Working on:
+Make an "output" method for all classes?
+Then will have to make regex for all strings, probably in a class named obtain_info, for creation of new objects (dynamic)
 
 
-Students
-    Name
-    email
-    list of classes they attend
-    major
-    phone num
-    ID num
-    previously attended classes?
-    Year? based on credits?
+Will have to make a method to read in a schematic of school stuff to initialize a base of buildings, floors, rooms, dep... all objects
+
+This will facilitate testing of methods and objects, and create an ability to easilly save/transfer schematics
+Will main() hold an "array" of buildings? Should I make a School class? which hold buildings? 
+
+Order for creation of objects
+    1. Buildings --> Floors --> Rooms (one statement?)
+    2. Departments
 
 
-Classes
-    room id
-    class id
-    class name
-    class time
-    department offering class?
+Formatted output order
 
-Rooms
-    room id      (XYY) - X=floor, Y=room num
-    building
-    room type
-        Office (prof office)
-        Classroom
-            Lab classroom
-            Lecture classroom
+    Buildings
+
+    Departments
+        Courses
+
+    Teachers
+
+    Students
+
+ex: 
+
+
+
+//End current thoughts
 -------------------------------------------------------------------
 final? objects made
 
@@ -86,58 +69,61 @@ Person
     Teachers extend Person
         uniquely have Office object
 
-==========Building Objects==============
+==========Building Objects==============          ! = info needed @ creation
 
 public class Building
-    private int numOfFloors;
-    private String buildingName;
-    private List<Floor> floors;
+!    private int numOfFloors;
+!    private String buildingName;
+!    private List<Floor> floors;  |  0 = one floor building, 1 is two floor building (part of object creation?)
 
 public class Floor implements Iterable <Floor> {
-    private Building building;
-    private List <Room> rooms;
-    private int floorNum;
-    private int roomNum;
+!    private Building building;
+!    private List <Room> rooms;
+!    private int floorNum;
+!    private int roomNum;
 
 public class Room implements Iterable<Room>{
-    private Building building;
-    private Floor floor;
-    private int roomNum;
+!    private Building building;
+!    private Floor floor;
+!    private int roomNum;
+
+nested creation statement required Building(Floor(Room()))
 
 =============Base componet objects============
 
 public class Course implements Iterable<Course> {
-    private Teacher teacher;
-    private final ArrayList<Student> studentList = new ArrayList<Student>();
-    private Department dep;
-    private String courseName;
-    private String courseNum;
-    private String courseID;
-    private Room room;
+    private Teacher teacher;  |  is teacher (DYNAMICLLY ASSIGNED) - same department req?
+    private final ArrayList<Student> studentList = new ArrayList<Student>();  |  students taking course (DYNAMICLLY ASSIGNED)
+!    private Department dep;  |  dep offering course (PRE EXIST!)
+!    private String courseName;  |  course name, such as Calculus II
+!    private String courseNum;  |  num for course, such as 302 maybe for calc 2?
+!    private String courseID;  |  is department's id num, then the course num, (if MATH dep id num is 01, then id for Calc II would be 01302)
+    private Room room;  |  room where lectures are hosted (DYNAM Assigned)
 
 public class Department implements Iterable<Department>{
-    private ID departmentID;
-    private String departementName;
-    private Building building;
-    private final ArrayList<Teacher> departmentTeachers = new ArrayList<Teacher>();
-    private final ArrayList<Student> departmentStudents = new ArrayList<Student>();
+!    private ID departmentID;
+!    private String departementName;  |  EX. biology, physics, english, history...
+    private Building building;  |  where offices are located, what building (Science building)
+    private final ArrayList<Teacher> departmentTeachers = new ArrayList<Teacher>();  |  list of profs for this department
+    private final ArrayList<Student> departmentStudents = new ArrayList<Student>();  |  list of students majoring in dep
+    private final ArrayList<Course> departmentCourses = new ArrayList<Course>();  |  list of courses offered by dep
 
 public class Email {
-    private String email;
+!    private String email;
 
 public class ID {
-    private String type;
-    private String ID;
+!    private String type;
+!    private String ID;
 
 public class Name {
-    private String fName;
-    private char mInitial;
-    private String lName;
-    private boolean hasMiddleInit = /*default*/ false;
+!    private String fName;
+!    private char mInitial;
+!    private String lName;
+?    private boolean hasMiddleInit = /*default*/ false;
 
 public class Office {
-    private Room room;
-    private PhoneNum phoneNum;
+!    private Room room;
+?    private PhoneNum phoneNum;  nested creation?
 
 public class PhoneNum {
-    private String phoneNum;
+!    private String phoneNum;

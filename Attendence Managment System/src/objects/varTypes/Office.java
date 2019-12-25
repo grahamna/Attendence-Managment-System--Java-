@@ -1,6 +1,6 @@
 package objects.varTypes;
 
-
+import objects.varTypes.Building.Room;
 
 public class Office {
     private Room room;
@@ -11,6 +11,10 @@ public class Office {
         setPhoneNum(phoneNum);
     }
     
+    @Override
+    public String toString() {
+        return "Office: "+ this.getRoom().toString() + '\n' + this.getPhoneNum().toString();
+    }
 
     /**
      * @return Room return the room

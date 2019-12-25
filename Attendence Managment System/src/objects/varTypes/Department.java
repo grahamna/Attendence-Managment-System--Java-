@@ -11,6 +11,7 @@ public class Department implements Iterable<Department>{
     private Building building;
     private final ArrayList<Teacher> departmentTeachers = new ArrayList<Teacher>();
     private final ArrayList<Student> departmentStudents = new ArrayList<Student>();
+    private final ArrayList<Course> departmentCourses = new ArrayList<Course>();
 
 
     public Department(final ID departmentID, final String departmentName, final Building building, final List<Teacher> departmentTeachers, final List<Student> departmentStudents) {
@@ -108,5 +109,18 @@ public class Department implements Iterable<Department>{
     }
     public void removeDepartmentStudents(final Student s) {
         this.departmentStudents.remove(s);
+    }
+
+        /**
+     * @return List<Course> return the departmentStudents
+     */
+    public ArrayList<Course> getDepartmentCourses() {
+        return departmentCourses;
+    }
+    public void addDepartmentCourses(final Course s) {
+        this.departmentCourses.add(s);
+    }
+    public void removeDepartmentCourses(final Course s) {
+        this.departmentCourses.remove(s);
     }
 }
