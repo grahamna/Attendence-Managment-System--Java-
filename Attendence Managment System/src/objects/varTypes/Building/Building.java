@@ -7,6 +7,10 @@ public class Building {
     private String buildingName;
     private List<Floor> floors;
 
+    public Building(){
+        
+    }
+
     public Building(final int num, final String name, final List<Floor> floorArray) {
         setNumOfFloors(num);
         setBuildingName(name);
