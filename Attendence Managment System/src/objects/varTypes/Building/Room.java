@@ -1,19 +1,26 @@
 package objects.varTypes.Building;
 
-public class Room implements Iterable<Room>{
+import java.util.Iterator;
+
+public class Room implements Iterable<Room> {
     private Building building;
     private Floor floor;
     private int roomNum;
 
-    public Room(final Building building, final Floor floor, final int roomNum) {
-        setBuilding(building);
-        setFloorNum(floor);
+    public Room(final int roomNum,final Floor floor, final Building building) {
         setRoomNum(roomNum);
+        setFloorNum(floor);
+        setBuilding(building);
     }
 
     @Override
     public String toString() {
-        return this.building.toString() + " - " + floor.getFloorNum() + this.roomNum;
+        if(this.roomNum<10) {
+            return this.building.toString() + " - " + floor.getFloorNum() +"0" +this.roomNum;
+        }
+        else{
+            return this.building.toString() + " - " + floor.getFloorNum() +this.roomNum;
+        }
     }
 
     public Building getBuilding() {
@@ -38,5 +45,11 @@ public class Room implements Iterable<Room>{
 
     public void setRoomNum(final int roomNum) {
         this.roomNum = roomNum;
+    }
+
+    @Override
+    public Iterator<Room> iterator() {
+        // TODO Auto-generated method stub
+        return null;
     }
 }

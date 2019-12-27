@@ -74,7 +74,7 @@ Person
 public class Building
 !    private int numOfFloors;
 !    private String buildingName;
-!    private List<Floor> floors;  |  0 = one floor building, 1 is two floor building (part of object creation?)
+!    private List<Floor> floors;  |  1 = first floor building, 1 is two floor building (part of object creation?)
 
 public class Floor implements Iterable <Floor> {
 !    private Building building;

@@ -1,18 +1,18 @@
 package objects.varTypes.Building;
 
-import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
 
-public class Floor implements Iterable <Floor> {
+public class Floor implements Iterable<Floor> {
     private Building building;
-    private List <Room> rooms;
+    private ArrayList<Room> rooms = new ArrayList<Room>();
     private int floorNum;
     private int roomNum;
 
-    public Floor(final Building building, final List<Room> rooms, final int floorNum, final int roomNum) {
-        setBuilding(building);
-        setRooms(rooms);
+    public Floor(final int floorNum, final int roomNum, Building building) {
         setFloorNum(floorNum);
         setRoomNum(roomNum);
+        setBuilding(building);
     }
 
     @Override
@@ -37,15 +37,14 @@ public class Floor implements Iterable <Floor> {
     /**
      * @return List<Room> return the rooms
      */
-    public List<Room> getRooms() {
+    public ArrayList<Room> getRooms() {
         return rooms;
     }
-
-    /**
-     * @param rooms the rooms to set
-     */
-    public void setRooms(final List<Room> rooms) {
-        this.rooms = rooms;
+    public void addRoom(Room r){
+        this.rooms.add(r);
+    }
+    public void removeRoom(Room r){
+        this.rooms.remove(r);
     }
 
     /**
@@ -74,6 +73,11 @@ public class Floor implements Iterable <Floor> {
      */
     public void setRoomNum(final int roomNum) {
         this.roomNum = roomNum;
+    }
+
+    @Override
+    public Iterator<Floor> iterator() {
+        return null;
     }
 
 }

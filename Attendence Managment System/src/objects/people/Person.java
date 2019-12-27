@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import objects.varTypes.*;
 
-protected abstract class Person {
+abstract class Person {
     private Name name;
     private ID id;
     private Email email;
@@ -27,7 +27,7 @@ protected abstract class Person {
     public String toString() {
         String str = this.department.toString() + this.type.toString() + '\n';
         str += "Name : " + this.name.toString() + '\n';
-        str += this.ID.toString() + '\n';
+        str += this.id.toString() + '\n';
         str += "Email : " + this.email.toString() + '\n';
         str += "Phone Number : " + this.phoneNum.toString();
         return str;
@@ -35,7 +35,7 @@ protected abstract class Person {
 
     public String printMyCourses() {
         String str = "";
-        for (final Course course : takesCourses) {
+        for (final Course course : hasCourses) {
             str += course.toString() + '\n';
         }
         return str;

@@ -1,6 +1,7 @@
 package objects.varTypes;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import objects.people.Student;
 import objects.people.Teacher;
@@ -31,8 +32,8 @@ public class Course implements Iterable<Course> {
     }
 
     public String describe() {
-        return this.toString() + '\n' + this.room.toString() + '\n'; 
-        //may be incomplete
+        return this.toString() + '\n' + this.room.toString() + '\n';
+        // may be incomplete
     }
 
     public Room getRoom() {
@@ -63,12 +64,13 @@ public class Course implements Iterable<Course> {
     public ArrayList<Student> getStudentList() {
         return studentList;
     }
+
     public void addStudent(final Student s) {
         this.studentList.add(s);
     }
 
     public void removeStudent(final Student s) {
-            this.studentList.remove(s);
+        this.studentList.remove(s);
     }
 
     /**
@@ -126,6 +128,12 @@ public class Course implements Iterable<Course> {
     public void setCourseID(final String courseID) {
         final String str = this.dep.getDepartmentID().getID() + courseID;
         this.courseID = str;
+    }
+
+    @Override
+    public Iterator<Course> iterator() {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

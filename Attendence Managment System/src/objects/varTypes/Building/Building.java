@@ -1,32 +1,31 @@
 package objects.varTypes.Building;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Building {
     private int numOfFloors;
     private String buildingName;
-    private List<Floor> floors;
+    private final ArrayList<Floor> floors = new ArrayList<Floor>();
 
     public Building(){
         
     }
 
-    public Building(final int num, final String name, final List<Floor> floorArray) {
+    public Building(final int num, final String name) {
         setNumOfFloors(num);
         setBuildingName(name);
-        setFloors(floorArray);
     }
 
 
     @Override
     public String toString() {
-        return buildingName.toString();
+        return this.buildingName;
     }
 
     public String describe() {
         String str = "( " + this.buildingName + " { " + this.numOfFloors + " } < ";
         for (final Floor floor : floors) {
-            str += floor.getFloorNum() + " ";
+            str += floor.getRoomNum() + " ";
         }
         str += "> ) ";
         return str;
@@ -64,15 +63,14 @@ public class Building {
     /**
      * @return List<Floor> return the floors
      */
-    public List<Floor> getFloors() {
+    public ArrayList<Floor> getFloors() {
         return floors;
     }
-
-    /**
-     * @param floors the floors to set
-     */
-    public void setFloors(final List<Floor> floors) {
-        this.floors = floors;
+    public void addFloor(final Floor floor) {
+        this.floors.add(floor);
+    }
+    public void removeFloor(final Floor floor){
+        this.floors.remove(floor);
     }
 
 }
