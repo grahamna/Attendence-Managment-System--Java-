@@ -22,12 +22,12 @@ public class Building {
         return this.buildingName;
     }
 
-    public String describe() {
-        String str = "( " + this.buildingName + " { " + this.numOfFloors + " } < ";
+    public String output() {
+        String str = "B( " + this.buildingName + " { " + this.numOfFloors + " } < ";
         for (final Floor floor : floors) {
             str += floor.getRoomNum() + " ";
         }
-        str += "> ) ";
+        str += "> )";
         return str;
     }
 
